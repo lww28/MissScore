@@ -1,6 +1,6 @@
 # MissScore — Reference Implementation
 
-A faithful PyTorch implementation of **"MissScore: High-Order Score Estimation in
+A PyTorch implementation of **"MissScore: High-Order Score Estimation in
 the Presence of Missing Data"** (ICLR 2025 submission).
 
 It implements high-order denoising score matching from incomplete data, the
