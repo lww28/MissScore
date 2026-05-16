@@ -1,4 +1,4 @@
-# MissScore — Reference Implementation
+# MissScore
 
 A PyTorch implementation of **"MissScore: High-Order Score Estimation in
 the Presence of Missing Data"** (ICLR 2025 submission).
