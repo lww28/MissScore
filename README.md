@@ -87,11 +87,21 @@ res = missscore_causal_discovery(Xi, mask, mechanism="mcar")
 print(res["order"], res["adjacency"])
 ```
 
+### Install
+
+Standard `src/` layout — install editable, then everything is importable:
+
+```bash
+pip install -e .          # or: pip install -r requirements.txt
+```
+
 Run the bundled checks:
 
 ```bash
-python -m missscore.demo     # Table-1-style score-MSE reproduction + sampling
-python test_causal.py        # Algorithm 3 on a known chain DAG
+missscore-demo                  # CLI entry point (Table-1-style reproduction)
+python scripts/run_demo.py      # same thing, as a script
+pytest tests/                   # Algorithm 3 on a known chain DAG (MCAR + MAR)
+python tests/test_causal.py     # same test, verbose standalone run
 ```
 
 ---
@@ -127,13 +137,22 @@ python test_causal.py        # Algorithm 3 on a known chain DAG
 
 ```
 missscore/
-  models.py     # score networks + all loss equations (5)-(9)
-  missing.py    # MCAR/MAR/MNAR generation + MAR probability estimation
-  train.py      # Algorithm 1 training loop
-  sampling.py   # Algorithm 2: Langevin (Eq.10) & Ozaki (Eq.11)
-  causal.py     # Algorithm 3: causal discovery from incomplete data
-  demo.py       # Table-1-style reproduction
-test_causal.py  # end-to-end causal-discovery test on a chain DAG
+├── pyproject.toml          # build config + missscore-demo entry point
+├── requirements.txt
+├── README.md
+├── src/
+│   └── missscore/
+│       ├── __init__.py     # public API
+│       ├── models.py       # score networks + all loss equations (5)-(9)
+│       ├── missing.py      # MCAR/MAR/MNAR generation + MAR prob. estimation
+│       ├── train.py        # Algorithm 1 training loop
+│       ├── sampling.py     # Algorithm 2: Langevin (Eq.10) & Ozaki (Eq.11)
+│       ├── causal.py       # Algorithm 3: causal discovery from missing data
+│       └── demo.py         # Table-1-style reproduction (CLI: missscore-demo)
+├── scripts/
+│   └── run_demo.py         # convenience runner
+└── tests/
+    └── test_causal.py      # end-to-end causal-discovery test (pytest-ready)
 ```
 
 ## Requirements
