@@ -139,7 +139,6 @@ python tests/test_causal.py     # same test, verbose standalone run
 
 ```
 missscore/
-├── pyproject.toml          # build config + missscore-demo entry point
 ├── requirements.txt
 ├── README.md
 ├── src/
