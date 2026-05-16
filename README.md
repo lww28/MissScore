@@ -1,7 +1,7 @@
 # MissScore
 
 A PyTorch implementation of **"MissScore: High-Order Score Estimation in
-the Presence of Missing Data"** (ICLR 2025 submission).
+the Presence of Missing Data"** (ICML 2025).
 
 It implements high-order denoising score matching from incomplete data, the
 variance-reduction objectives, Langevin / Ozaki sampling, and the missing-data
