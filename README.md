@@ -1,9 +1,4 @@
 # MissScore
-
-A PyTorch implementation of **"MissScore: High-Order Score Estimation in
-the Presence of Missing Data"** (ICML 2025).
-
-
 A PyTorch implementation of **MissScore** from
 
 > W.Liu, H.Hou, E.Gao, B.Huang, Q.Ke, H.Bondell, M.Gong.
